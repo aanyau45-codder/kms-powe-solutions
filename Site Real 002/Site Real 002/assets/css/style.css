@@ -1,0 +1,244 @@
+/* KMS Power Solutions - Custom Styles */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+::-webkit-scrollbar-thumb {
+  background: #9C1C1C;
+  border-radius: 3px;
+}
+
+/* Font */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Header */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #9C1C1C;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Hero section */
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(17,17,17,0.92) 0%, rgba(156,28,28,0.5) 100%);
+}
+
+/* Animated counter */
+.counter-value {
+  display: inline-block;
+}
+
+/* Card hover effects */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(156,28,28,0.25);
+}
+
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.4);
+  border-color: #9C1C1C;
+}
+
+/* Image overlay effect */
+.img-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.img-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(156,28,28,0.0);
+  transition: background 0.3s ease;
+}
+.img-overlay:hover::after {
+  background: rgba(156,28,28,0.15);
+}
+.img-overlay img {
+  transition: transform 0.5s ease;
+}
+.img-overlay:hover img {
+  transform: scale(1.05);
+}
+
+/* Modal */
+#quoteModal {
+  backdrop-filter: blur(4px);
+}
+.modal-enter {
+  animation: modalFadeIn 0.3s ease forwards;
+}
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.95) translateY(-10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* WhatsApp button */
+#whatsapp-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulse 2.5s infinite;
+}
+#whatsapp-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 24px rgba(37,211,102,0.5);
+  animation: none;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  50%       { box-shadow: 0 0 0 10px rgba(37,211,102,0); }
+}
+
+/* Stats section */
+.stat-card {
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background: #9C1C1C;
+}
+
+/* Section fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0.0s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+
+/* Testimonial card */
+.testimonial-card {
+  transition: transform 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+}
+
+/* CTA section diagonal */
+.cta-diagonal {
+  position: relative;
+}
+.cta-diagonal::before {
+  content: '';
+  position: absolute;
+  top: -40px; left: 0;
+  width: 100%; height: 80px;
+  background: inherit;
+  transform: skewY(-2deg);
+  transform-origin: top left;
+}
+
+/* Form inputs */
+.form-input {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-input:focus {
+  box-shadow: 0 0 0 3px rgba(156,28,28,0.25);
+}
+
+/* Hamburger */
+.hamburger-line {
+  transition: all 0.3s ease;
+}
+.hamburger.open .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.open .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile menu */
+#mobile-menu {
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+#mobile-menu.open {
+  max-height: 400px;
+  opacity: 1;
+}
+
+/* Map placeholder */
+.map-placeholder {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 2px dashed #333;
+}
+
+/* Hero badge */
+.hero-badge {
+  animation: badgePop 0.6s ease 0.8s both;
+}
+@keyframes badgePop {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Marquee / ticker (optional for brand strip) */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 18s linear infinite;
+}
+
+/* Active nav page highlight */
+.nav-active::after {
+  width: 100% !important;
+}
